@@ -3,7 +3,7 @@ import { SectionHeading } from "../ui/SectionHeading";
 
 export function Process({ steps }) {
   return (
-    <section id="process" className="relative pt-28 sm:pt-36">
+    <section id="process" className="relative scroll-mt-28 pt-28 sm:scroll-mt-32 sm:pt-36">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <Reveal>
           <SectionHeading

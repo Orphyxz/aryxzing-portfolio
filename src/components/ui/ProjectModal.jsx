@@ -43,14 +43,14 @@ export function ProjectModal({ project, onClose }) {
     <AnimatePresence>
       {project ? (
         <motion.div
-          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-[#03050f]/82 p-3 backdrop-blur-xl sm:items-center sm:p-4"
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-[#03050f]/82 p-2 backdrop-blur-xl sm:items-center sm:p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
         >
           <motion.div
-            className="relative my-6 max-h-[calc(100vh-1.5rem)] w-full max-w-4xl overflow-y-auto rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(14,20,40,0.96),rgba(8,10,22,0.97))] shadow-float sm:my-0 sm:max-h-[calc(100vh-2rem)] sm:rounded-[32px]"
+            className="relative my-4 max-h-[calc(100vh-1rem)] w-full max-w-4xl overflow-y-auto rounded-[22px] border border-white/10 bg-[linear-gradient(180deg,rgba(14,20,40,0.96),rgba(8,10,22,0.97))] shadow-float sm:my-0 sm:max-h-[calc(100vh-2rem)] sm:rounded-[32px]"
             initial={{ opacity: 0, y: 40, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.97 }}
@@ -68,7 +68,7 @@ export function ProjectModal({ project, onClose }) {
 
             <div className={`relative overflow-hidden border-b border-white/10 bg-gradient-to-br ${project.accent}`}>
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_34%)]" />
-              <div className="relative grid gap-6 px-5 pb-6 pt-14 sm:px-8 sm:pb-8 sm:pt-16 lg:grid-cols-[1.1fr,0.9fr] lg:gap-8 lg:px-12">
+              <div className="relative grid gap-6 px-4 pb-5 pt-14 sm:px-8 sm:pb-8 sm:pt-16 lg:grid-cols-[1.1fr,0.9fr] lg:gap-8 lg:px-12">
                 <div>
                   <div className="mb-4 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.3em] text-white/55">
                     <span>{project.category}</span>
@@ -100,7 +100,7 @@ export function ProjectModal({ project, onClose }) {
               </div>
             </div>
 
-            <div className="grid gap-6 px-5 py-6 sm:px-8 sm:py-8 lg:grid-cols-[1.1fr,0.9fr] lg:gap-8 lg:px-12">
+            <div className="grid gap-6 px-4 py-5 sm:px-8 sm:py-8 lg:grid-cols-[1.1fr,0.9fr] lg:gap-8 lg:px-12">
               <div>
                 {project.screenshots?.length ? (
                   <>
@@ -118,7 +118,7 @@ export function ProjectModal({ project, onClose }) {
                             <img
                               src={shot.src}
                               alt={`${project.title} - ${shot.label}`}
-                              className="h-44 w-full object-cover object-top transition duration-300 group-hover:scale-[1.02] sm:h-48"
+                              className="h-36 w-full object-cover object-top transition duration-300 group-hover:scale-[1.02] sm:h-48"
                               loading="lazy"
                               decoding="async"
                             />
@@ -178,7 +178,7 @@ export function ProjectModal({ project, onClose }) {
             <AnimatePresence>
               {selectedShot ? (
                 <motion.div
-                  className="absolute inset-0 z-20 flex items-center justify-center bg-[#03050f]/92 p-3 backdrop-blur-xl sm:p-6"
+                  className="absolute inset-0 z-20 flex items-center justify-center bg-[#03050f]/92 p-2 backdrop-blur-xl sm:p-6"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -200,11 +200,11 @@ export function ProjectModal({ project, onClose }) {
                     >
                       <X size={18} />
                     </button>
-                    <div className="overflow-hidden rounded-[24px] border border-white/10 bg-[#081122] shadow-float">
+                    <div className="overflow-hidden rounded-[20px] border border-white/10 bg-[#081122] shadow-float sm:rounded-[24px]">
                       <img
                         src={selectedShot.src}
                         alt={`${project.title} - ${selectedShot.label}`}
-                        className="max-h-[78vh] w-full object-contain bg-[#050915]"
+                        className="max-h-[72vh] w-full object-contain bg-[#050915] sm:max-h-[78vh]"
                         decoding="async"
                       />
                     </div>

@@ -142,17 +142,17 @@ function App() {
       </AnimatePresence>
 
       <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-6 sm:pt-4">
-        <div className="mx-auto max-w-7xl rounded-full border border-white/10 bg-[rgba(8,12,24,0.72)] px-3 py-3 shadow-halo backdrop-blur-2xl sm:px-6">
+        <div className="mx-auto max-w-7xl rounded-[26px] border border-white/10 bg-[rgba(8,12,24,0.78)] px-3 py-2.5 shadow-halo backdrop-blur-2xl sm:rounded-full sm:px-6 sm:py-3">
           <div className="flex items-center justify-between gap-4">
             <a href="#top" className="flex min-w-0 items-center gap-3">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.05] font-heading text-sm font-semibold tracking-[0.28em] text-white sm:h-11 sm:w-11">
                 A
               </div>
               <div className="min-w-0">
-                <div className="truncate font-heading text-xs font-semibold uppercase tracking-[0.24em] text-white sm:text-sm sm:tracking-[0.28em]">
+                <div className="truncate font-heading text-[11px] font-semibold uppercase tracking-[0.22em] text-white sm:text-sm sm:tracking-[0.28em]">
                   Aryxzing
                 </div>
-                <div className="hidden text-xs text-white/42 sm:block">Freelance designer, developer, and web product builder</div>
+                <div className="hidden text-xs text-white/42 lg:block">Freelance designer, developer, and web product builder</div>
               </div>
             </a>
 
@@ -180,7 +180,7 @@ function App() {
 
             <button
               type="button"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/75 transition hover:bg-white/[0.08] lg:hidden"
+              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/75 transition hover:bg-white/[0.08] lg:hidden"
               onClick={() => setMenuOpen((current) => !current)}
               aria-label="Toggle navigation"
             >

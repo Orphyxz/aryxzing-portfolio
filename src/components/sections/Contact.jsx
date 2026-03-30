@@ -4,7 +4,7 @@ import { Reveal } from "../ui/Reveal";
 
 export function Contact({ socialLinks }) {
   return (
-    <section id="contact" className="relative pb-24 pt-28 sm:pb-28 sm:pt-36">
+    <section id="contact" className="relative scroll-mt-28 pb-24 pt-28 sm:scroll-mt-32 sm:pb-28 sm:pt-36">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[linear-gradient(180deg,rgba(14,20,40,0.88),rgba(7,10,22,0.96))] px-5 py-8 shadow-float sm:rounded-[34px] sm:px-8 sm:py-14 lg:px-12">

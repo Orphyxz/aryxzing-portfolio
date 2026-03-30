@@ -5,7 +5,7 @@ import { SectionHeading } from "../ui/SectionHeading";
 
 export function FeaturedWork({ projects, onProjectOpen }) {
   return (
-    <section id="work" className="relative pt-28 sm:pt-36">
+    <section id="work" className="relative scroll-mt-28 pt-28 sm:scroll-mt-32 sm:pt-36">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <SectionHeading
@@ -26,12 +26,12 @@ export function FeaturedWork({ projects, onProjectOpen }) {
                 >
                   <div className={`relative overflow-hidden border-b border-white/10 bg-gradient-to-br ${project.accent}`}>
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_28%)]" />
-                    <div className="relative p-5 sm:p-7">
-                      <div className="flex items-center justify-between gap-4 text-[10px] uppercase tracking-[0.22em] text-white/50 sm:text-[11px] sm:tracking-[0.34em]">
+                    <div className="relative p-4 sm:p-7">
+                      <div className="flex flex-wrap items-center justify-between gap-3 text-[10px] uppercase tracking-[0.18em] text-white/50 sm:text-[11px] sm:tracking-[0.34em]">
                         <span>{project.category}</span>
                         <span>{project.year}</span>
                       </div>
-                      <div className="mt-6 rounded-[24px] border border-white/10 bg-[#081122]/82 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:mt-8">
+                      <div className="mt-5 rounded-[22px] border border-white/10 bg-[#081122]/82 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:mt-8 sm:rounded-[24px] sm:p-4">
                         <div className="mb-4 flex items-center gap-2">
                           <span className="h-2.5 w-2.5 rounded-full bg-[#ff6b6b]" />
                           <span className="h-2.5 w-2.5 rounded-full bg-[#f6b975]" />
@@ -42,7 +42,7 @@ export function FeaturedWork({ projects, onProjectOpen }) {
                             <img
                               src={project.thumbnail}
                               alt={project.title}
-                              className="h-56 w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                              className="h-44 w-full object-cover object-top transition duration-500 group-hover:scale-[1.03] sm:h-56"
                               loading="lazy"
                               decoding="async"
                             />
@@ -65,7 +65,7 @@ export function FeaturedWork({ projects, onProjectOpen }) {
                     </div>
                   </div>
 
-                  <div className="flex flex-1 flex-col p-5 sm:p-7">
+                  <div className="flex flex-1 flex-col p-4 sm:p-7">
                     <div className="flex items-start justify-between gap-5">
                       <div>
                         <h3 className="font-heading text-xl font-semibold text-white sm:text-2xl">{project.title}</h3>

@@ -12,7 +12,7 @@ const iconMap = {
 
 export function About({ strengths }) {
   return (
-    <section id="about" className="relative pt-28 sm:pt-36">
+    <section id="about" className="relative scroll-mt-28 pt-28 sm:scroll-mt-32 sm:pt-36">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.9fr,1.1fr] lg:px-8">
         <Reveal>
           <SectionHeading
