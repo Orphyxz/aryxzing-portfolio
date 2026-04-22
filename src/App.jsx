@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, lazy, useEffect, useMemo, useState } from "react";
 import { Menu, X } from "lucide-react";
 import {
   featuredProjects,
@@ -12,19 +12,28 @@ import {
   valueProps,
 } from "./data/content";
 import { About } from "./components/sections/About";
-import { Contact } from "./components/sections/Contact";
 import { FeaturedWork } from "./components/sections/FeaturedWork";
 import { Hero } from "./components/sections/Hero";
-import { Services } from "./components/sections/Services";
-import { WhyWork } from "./components/sections/WhyWork";
 import { BackgroundFX } from "./components/ui/BackgroundFX";
-import { ProjectModal } from "./components/ui/ProjectModal";
+import { DeferredSection } from "./components/ui/DeferredSection";
+
+const Services = lazy(() =>
+  import("./components/sections/Services").then((module) => ({ default: module.Services })),
+);
+const WhyWork = lazy(() =>
+  import("./components/sections/WhyWork").then((module) => ({ default: module.WhyWork })),
+);
+const Contact = lazy(() =>
+  import("./components/sections/Contact").then((module) => ({ default: module.Contact })),
+);
+const ProjectModal = lazy(() =>
+  import("./components/ui/ProjectModal").then((module) => ({ default: module.ProjectModal })),
+);
 
 function App() {
   const [activeSection, setActiveSection] = useState("value");
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   const sectionIds = useMemo(() => navItems.map((item) => item.id), []);
 
@@ -82,22 +91,6 @@ function App() {
   }, [sectionIds]);
 
   useEffect(() => {
-    const hasSeenLoader = window.sessionStorage.getItem("aryxzing-loader-seen") === "1";
-
-    if (hasSeenLoader) {
-      setIsLoaded(true);
-      return undefined;
-    }
-
-    const timer = window.setTimeout(() => {
-      window.sessionStorage.setItem("aryxzing-loader-seen", "1");
-      setIsLoaded(true);
-    }, 420);
-
-    return () => window.clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
     document.body.style.overflow = selectedProject || menuOpen ? "hidden" : "";
 
     return () => {
@@ -108,38 +101,6 @@ function App() {
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-base text-white">
       <BackgroundFX />
-
-      <AnimatePresence>
-        {!isLoaded ? (
-          <motion.div
-            className="fixed inset-0 z-[80] flex items-center justify-center bg-[#02040d]"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }}
-          >
-            <motion.div
-              className="px-4 text-center"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="font-heading text-2xl font-semibold tracking-[0.18em] text-white sm:text-3xl">
-                ARYXZING
-              </div>
-              <div className="mt-3 text-[10px] uppercase tracking-[0.35em] text-white/42 sm:text-xs sm:tracking-[0.45em]">
-                Modern websites built to convert
-              </div>
-              <div className="mx-auto mt-8 h-px w-40 overflow-hidden bg-white/10 sm:w-52">
-                <motion.div
-                  className="h-full bg-[linear-gradient(90deg,transparent,rgba(246,185,117,0.95),transparent)]"
-                  initial={{ x: "-100%" }}
-                  animate={{ x: "100%" }}
-                  transition={{ duration: 1.15, ease: "easeInOut", repeat: Infinity }}
-                />
-              </div>
-            </motion.div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
 
       <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-6 sm:pt-4">
         <div className="mx-auto max-w-7xl rounded-[26px] border border-white/10 bg-[rgba(8,12,24,0.78)] px-3 py-2.5 shadow-halo backdrop-blur-2xl sm:rounded-full sm:px-6 sm:py-3">
@@ -239,16 +200,30 @@ function App() {
         />
         <About strengths={valueProps} />
         <FeaturedWork projects={featuredProjects} onProjectOpen={setSelectedProject} />
-        <Services services={services} />
-        <WhyWork points={trustPoints} />
-        <Contact socialLinks={socialLinks} />
+        <Suspense fallback={<div className="min-h-[26rem]" />}>
+          <DeferredSection minHeightClass="min-h-[26rem]">
+            <Services services={services} />
+          </DeferredSection>
+        </Suspense>
+        <Suspense fallback={<div className="min-h-[22rem]" />}>
+          <DeferredSection minHeightClass="min-h-[22rem]">
+            <WhyWork points={trustPoints} />
+          </DeferredSection>
+        </Suspense>
+        <Suspense fallback={<div className="min-h-[24rem]" />}>
+          <DeferredSection minHeightClass="min-h-[24rem]">
+            <Contact socialLinks={socialLinks} />
+          </DeferredSection>
+        </Suspense>
       </main>
 
       <footer className="relative z-10 border-t border-white/8 px-5 py-8 text-sm text-white/45 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl text-center">Copyright 2026 Aryxzing. All rights reserved.</div>
       </footer>
 
-      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+      <Suspense fallback={null}>
+        {selectedProject ? <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} /> : null}
+      </Suspense>
     </div>
   );
 }

@@ -64,7 +64,7 @@ export const featuredProjects = [
     impact: "Improved clarity and conversion flow by turning multiple support actions into one guided digital experience.",
     year: "2025",
     accent: "from-[#69d2b0]/22 via-[#5dd2ff]/10 to-transparent",
-    thumbnail: "/projects/wellness-connect/home.png",
+    thumbnail: "/projects/wellness-connect/thumb.jpg",
     screenshots: [
       { src: "/projects/wellness-connect/home.png", label: "Homepage and counseling-focused hero" },
       { src: "/projects/wellness-connect/slot-booking.png", label: "Student slot booking interface" },
@@ -101,7 +101,7 @@ export const featuredProjects = [
     impact: "Created a stronger dashboard-first product experience with clearer performance insight and more useful decision-making screens.",
     year: "2025",
     accent: "from-[#5dd2ff]/25 via-[#5dd2ff]/10 to-transparent",
-    thumbnail: "/projects/aptisense/student-dashboard.png",
+    thumbnail: "/projects/aptisense/thumb.jpg",
     screenshots: [
       { src: "/projects/aptisense/student-dashboard.png", label: "Student dashboard and readiness overview" },
       { src: "/projects/aptisense/performance-trend.png", label: "Performance trend analytics" },
@@ -137,7 +137,7 @@ export const featuredProjects = [
     impact: "Improved brand clarity and lead-focused structure with a simpler, more credible user journey.",
     year: "2024",
     accent: "from-[#d9a676]/22 via-[#f5d08b]/10 to-transparent",
-    thumbnail: "/projects/getitallsorted/hero.png",
+    thumbnail: "/projects/getitallsorted/thumb.jpg",
     screenshots: [
       { src: "/projects/getitallsorted/hero.png", label: "Home page hero" },
       { src: "/projects/getitallsorted/gallery.png", label: "Before and after gallery" },
@@ -173,7 +173,7 @@ export const featuredProjects = [
     impact: "Redesigned the experience for a cleaner user journey across dashboards, workflows, and day-to-day placement operations.",
     year: "2025",
     accent: "from-[#38c9b8]/22 via-[#5dd2ff]/10 to-transparent",
-    thumbnail: "/projects/e-placement-hub/admin-dashboard.jpg",
+    thumbnail: "/projects/e-placement-hub/thumb.jpg",
     screenshots: [
       { src: "/projects/e-placement-hub/admin-dashboard.jpg", label: "Admin dashboard analytics overview" },
       { src: "/projects/e-placement-hub/student-dashboard.jpg", label: "Student dashboard with placement stats and upcoming drives" },

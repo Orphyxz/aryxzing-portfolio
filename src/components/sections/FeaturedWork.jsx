@@ -45,6 +45,9 @@ export function FeaturedWork({ projects, onProjectOpen }) {
                               className="h-44 w-full object-cover object-top transition duration-500 group-hover:scale-[1.03] sm:h-56"
                               loading="lazy"
                               decoding="async"
+                              width="900"
+                              height="540"
+                              sizes="(max-width: 1024px) calc(100vw - 3rem), 38rem"
                             />
                           </div>
                         ) : (

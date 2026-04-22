@@ -1,10 +1,28 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { MagneticButton } from "../ui/MagneticButton";
 import { Reveal } from "../ui/Reveal";
 
 export function Hero({ trustSignals, heroStats, showcaseProjects = [] }) {
   const [primaryProject, secondaryProject] = showcaseProjects;
+  const prefersReducedMotion = useReducedMotion();
+  const [animateHeroVisuals, setAnimateHeroVisuals] = useState(false);
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setAnimateHeroVisuals(false);
+      return undefined;
+    }
+
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    const update = () => setAnimateHeroVisuals(mediaQuery.matches);
+
+    update();
+    mediaQuery.addEventListener("change", update);
+
+    return () => mediaQuery.removeEventListener("change", update);
+  }, [prefersReducedMotion]);
 
   return (
     <section id="top" className="relative overflow-hidden scroll-mt-28 pt-28 sm:scroll-mt-32 sm:pt-32 lg:pt-40">
@@ -68,26 +86,26 @@ export function Hero({ trustSignals, heroStats, showcaseProjects = [] }) {
           className="relative flex min-h-0 flex-col gap-4 rounded-[28px] border border-white/10 p-3 shadow-float sm:min-h-[620px] sm:rounded-[32px] sm:p-0 lg:block lg:min-h-[640px] lg:border-0 lg:p-0"
           delay={0.18}
         >
-          <div className="absolute inset-0 rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(12,19,40,0.82),rgba(6,10,22,0.4))] shadow-float sm:rounded-[32px]">
+          <div className="absolute inset-0 rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(12,19,40,0.78),rgba(6,10,22,0.48))] shadow-[0_20px_56px_rgba(4,7,20,0.42)] sm:rounded-[32px]">
             <div className="absolute inset-x-10 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(246,185,117,0.16),transparent_34%),radial-gradient(circle_at_80%_10%,rgba(93,210,255,0.12),transparent_26%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(246,185,117,0.12),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(93,210,255,0.1),transparent_22%)]" />
           </div>
 
           <motion.div
-            className="absolute right-2 top-4 hidden h-28 w-28 rounded-full bg-glow-amber/25 blur-3xl sm:block sm:right-10 sm:top-10 sm:h-40 sm:w-40"
-            animate={{ scale: [1, 1.12, 0.96, 1], opacity: [0.35, 0.55, 0.28, 0.35] }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute right-2 top-4 hidden h-28 w-28 rounded-full bg-glow-amber/20 blur-3xl sm:block sm:right-10 sm:top-10 sm:h-36 sm:w-36"
+            animate={animateHeroVisuals ? { scale: [1, 1.1, 0.98, 1], opacity: [0.28, 0.42, 0.24, 0.28] } : undefined}
+            transition={animateHeroVisuals ? { duration: 14, repeat: Infinity, ease: "easeInOut" } : undefined}
           />
           <motion.div
-            className="absolute bottom-6 left-4 hidden h-32 w-32 rounded-full bg-glow-cyan/14 blur-3xl sm:block sm:bottom-12 sm:left-12 sm:h-48 sm:w-48"
-            animate={{ scale: [1, 0.95, 1.08, 1], opacity: [0.3, 0.46, 0.26, 0.3] }}
-            transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-6 left-4 hidden h-32 w-32 rounded-full bg-glow-cyan/10 blur-3xl sm:block sm:bottom-12 sm:left-12 sm:h-40 sm:w-40"
+            animate={animateHeroVisuals ? { scale: [1, 0.97, 1.04, 1], opacity: [0.22, 0.34, 0.2, 0.22] } : undefined}
+            transition={animateHeroVisuals ? { duration: 15, repeat: Infinity, ease: "easeInOut" } : undefined}
           />
 
           <motion.div
-            className="relative z-10 w-full rounded-[24px] border border-white/12 bg-[#0c152d]/80 p-4 shadow-halo backdrop-blur-2xl sm:absolute sm:left-6 sm:top-6 sm:w-[min(78vw,23rem)] sm:rounded-[28px] sm:p-5 lg:left-10 lg:top-10 lg:p-6"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+            className="relative z-10 w-full rounded-[24px] border border-white/12 bg-[#0c152d]/78 p-4 shadow-[0_14px_36px_rgba(4,7,20,0.34)] backdrop-blur-xl sm:absolute sm:left-6 sm:top-6 sm:w-[min(78vw,23rem)] sm:rounded-[28px] sm:p-5 lg:left-10 lg:top-10 lg:p-6"
+            animate={animateHeroVisuals ? { y: [0, -8, 0] } : undefined}
+            transition={animateHeroVisuals ? { duration: 10, repeat: Infinity, ease: "easeInOut" } : undefined}
           >
             <div className="mb-6 flex items-center gap-2">
               <span className="h-2.5 w-2.5 rounded-full bg-[#ff6b6b]" />
@@ -115,7 +133,11 @@ export function Hero({ trustSignals, heroStats, showcaseProjects = [] }) {
                     alt={primaryProject.title}
                     className="h-40 w-full object-cover object-top sm:h-48"
                     loading="eager"
+                    fetchPriority="high"
                     decoding="async"
+                    width="900"
+                    height="540"
+                    sizes="(max-width: 640px) calc(100vw - 5rem), (max-width: 1024px) 22rem, 23rem"
                   />
                 </div>
                 <p className="mt-4 text-sm leading-6 text-white/62">{primaryProject.result}</p>
@@ -124,9 +146,9 @@ export function Hero({ trustSignals, heroStats, showcaseProjects = [] }) {
           </motion.div>
 
           <motion.div
-            className="relative z-10 w-full rounded-[24px] border border-white/12 bg-[#0c152a]/78 p-4 shadow-halo backdrop-blur-2xl sm:absolute sm:bottom-10 sm:right-6 sm:w-[min(72vw,20rem)] sm:rounded-[28px] sm:p-5 lg:bottom-12 lg:right-4"
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="relative z-10 w-full rounded-[24px] border border-white/12 bg-[#0c152a]/74 p-4 shadow-[0_14px_36px_rgba(4,7,20,0.34)] backdrop-blur-xl sm:absolute sm:bottom-10 sm:right-6 sm:w-[min(72vw,20rem)] sm:rounded-[28px] sm:p-5 lg:bottom-12 lg:right-4"
+            animate={animateHeroVisuals ? { y: [0, 10, 0] } : undefined}
+            transition={animateHeroVisuals ? { duration: 11, repeat: Infinity, ease: "easeInOut" } : undefined}
           >
             <div className="mb-4 text-xs uppercase tracking-[0.28em] text-white/45">What I help with</div>
             <div className="space-y-3">
@@ -154,6 +176,9 @@ export function Hero({ trustSignals, heroStats, showcaseProjects = [] }) {
                       className="h-full w-full object-cover object-top"
                       loading="lazy"
                       decoding="async"
+                      width="900"
+                      height="540"
+                      sizes="4rem"
                     />
                   </div>
                   <div className="min-w-0">
