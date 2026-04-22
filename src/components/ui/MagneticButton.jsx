@@ -25,7 +25,7 @@ export function MagneticButton({
   }, []);
 
   const base =
-    "inline-flex items-center justify-center rounded-full border px-6 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300";
+    "inline-flex min-h-[3.25rem] items-center justify-center rounded-full border px-5 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 sm:px-6";
   const variants = {
     primary:
       "border-glow-amber/40 bg-[linear-gradient(135deg,rgba(246,185,117,0.34),rgba(255,255,255,0.1))] text-white shadow-[0_18px_42px_rgba(246,185,117,0.18)] hover:border-glow-amber/70 hover:shadow-[0_22px_55px_rgba(246,185,117,0.24)]",

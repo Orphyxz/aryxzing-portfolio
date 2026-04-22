@@ -25,9 +25,9 @@ export function Hero({ trustSignals, heroStats, showcaseProjects = [] }) {
   }, [prefersReducedMotion]);
 
   return (
-    <section id="top" className="relative overflow-hidden scroll-mt-28 pt-28 sm:scroll-mt-32 sm:pt-32 lg:pt-40">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.02fr,0.98fr] lg:gap-14 lg:px-8">
-        <div className="relative z-10 max-w-3xl">
+    <section id="top" className="relative overflow-hidden scroll-mt-28 pt-28 sm:scroll-mt-32 sm:pt-32 lg:pt-36 xl:pt-40">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-[minmax(0,1.02fr),minmax(0,0.98fr)] lg:items-center lg:gap-12 lg:px-8 xl:gap-14">
+        <div className="relative z-10 max-w-3xl xl:max-w-[40rem]">
           <Reveal>
             <div className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/60 backdrop-blur-xl sm:gap-3 sm:text-[11px] sm:tracking-[0.28em]">
               <Sparkles size={14} className="shrink-0 text-glow-amber" />
@@ -36,7 +36,7 @@ export function Hero({ trustSignals, heroStats, showcaseProjects = [] }) {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <h1 className="mt-6 font-heading text-[2.35rem] font-semibold leading-[0.96] text-white sm:mt-7 sm:text-6xl lg:text-[5.6rem]">
+            <h1 className="mt-6 max-w-[11ch] font-heading text-[clamp(2.5rem,8vw,5.6rem)] font-semibold leading-[0.94] text-white sm:mt-7">
               Websites that turn
               <span className="bg-[linear-gradient(120deg,#ffffff_0%,#f6b975_38%,#8fdfff_78%,#ffffff_100%)] bg-clip-text text-transparent">{" "}visitors{" "}</span>
               into customers.
@@ -44,19 +44,19 @@ export function Hero({ trustSignals, heroStats, showcaseProjects = [] }) {
           </Reveal>
 
           <Reveal delay={0.14}>
-            <p className="mt-6 max-w-2xl text-[15px] leading-7 text-white/66 sm:mt-8 sm:text-xl sm:leading-8">
+            <p className="mt-5 max-w-[37rem] text-[15px] leading-7 text-white/66 sm:mt-7 sm:text-[1.15rem] sm:leading-8 lg:text-[1.22rem]">
               I design and build modern, high-performing websites for startups and businesses that actually want results.
             </p>
           </Reveal>
 
           <Reveal delay={0.18}>
-            <p className="mt-4 max-w-2xl text-sm uppercase tracking-[0.18em] text-white/50 sm:text-[13px] sm:tracking-[0.26em]">
+            <p className="mt-4 max-w-[34rem] text-[12px] uppercase tracking-[0.16em] text-white/50 sm:text-[13px] sm:tracking-[0.24em]">
               Most websites lose users in the first few seconds. I design around that.
             </p>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
+            <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <MagneticButton href="#contact" className="w-full gap-2 sm:w-auto sm:min-w-[11.5rem]">
                 Work With Me
                 <ArrowRight size={16} />
@@ -68,11 +68,11 @@ export function Hero({ trustSignals, heroStats, showcaseProjects = [] }) {
           </Reveal>
 
           <Reveal delay={0.26}>
-            <div className="mt-8 grid gap-3 text-sm text-white/56 sm:mt-12 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-8 grid gap-3 text-sm text-white/56 sm:mt-10 sm:grid-cols-2 xl:grid-cols-4">
               {trustSignals.map((signal) => (
                 <div
                   key={signal}
-                  className="flex items-center gap-3 rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-3 backdrop-blur transition duration-300 hover:border-white/14 hover:bg-white/[0.05]"
+                  className="flex min-h-[3.5rem] items-center gap-3 rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-3 backdrop-blur transition duration-300 hover:border-white/14 hover:bg-white/[0.05]"
                 >
                   <span className="h-2 w-2 shrink-0 rounded-full bg-glow-cyan/80 shadow-[0_0_18px_rgba(93,210,255,0.7)]" />
                   <span>{signal}</span>
@@ -103,7 +103,7 @@ export function Hero({ trustSignals, heroStats, showcaseProjects = [] }) {
           />
 
           <motion.div
-            className="relative z-10 w-full rounded-[24px] border border-white/12 bg-[#0c152d]/78 p-4 shadow-[0_14px_36px_rgba(4,7,20,0.34)] backdrop-blur-xl sm:absolute sm:left-6 sm:top-6 sm:w-[min(78vw,23rem)] sm:rounded-[28px] sm:p-5 lg:left-10 lg:top-10 lg:p-6"
+            className="relative z-10 w-full rounded-[24px] border border-white/12 bg-[#0c152d]/78 p-4 shadow-[0_14px_36px_rgba(4,7,20,0.34)] backdrop-blur-xl sm:absolute sm:left-6 sm:top-6 sm:w-[min(78vw,23rem)] sm:rounded-[28px] sm:p-5 md:w-[min(60vw,24rem)] lg:left-10 lg:top-10 lg:w-[min(44vw,25rem)] lg:p-6"
             animate={animateHeroVisuals ? { y: [0, -8, 0] } : undefined}
             transition={animateHeroVisuals ? { duration: 10, repeat: Infinity, ease: "easeInOut" } : undefined}
           >
@@ -131,7 +131,7 @@ export function Hero({ trustSignals, heroStats, showcaseProjects = [] }) {
                   <img
                     src={primaryProject.thumbnail}
                     alt={primaryProject.title}
-                    className="h-40 w-full object-cover object-top sm:h-48"
+                    className="aspect-[5/3] w-full object-cover object-top"
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"
@@ -146,7 +146,7 @@ export function Hero({ trustSignals, heroStats, showcaseProjects = [] }) {
           </motion.div>
 
           <motion.div
-            className="relative z-10 w-full rounded-[24px] border border-white/12 bg-[#0c152a]/74 p-4 shadow-[0_14px_36px_rgba(4,7,20,0.34)] backdrop-blur-xl sm:absolute sm:bottom-10 sm:right-6 sm:w-[min(72vw,20rem)] sm:rounded-[28px] sm:p-5 lg:bottom-12 lg:right-4"
+            className="relative z-10 w-full rounded-[24px] border border-white/12 bg-[#0c152a]/74 p-4 shadow-[0_14px_36px_rgba(4,7,20,0.34)] backdrop-blur-xl sm:absolute sm:bottom-10 sm:right-6 sm:w-[min(72vw,20rem)] sm:rounded-[28px] sm:p-5 md:w-[min(52vw,21rem)] lg:bottom-12 lg:right-4 lg:w-[min(38vw,22rem)]"
             animate={animateHeroVisuals ? { y: [0, 10, 0] } : undefined}
             transition={animateHeroVisuals ? { duration: 11, repeat: Infinity, ease: "easeInOut" } : undefined}
           >

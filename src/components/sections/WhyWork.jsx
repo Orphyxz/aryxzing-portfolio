@@ -12,7 +12,7 @@ const iconMap = {
 
 export function WhyWork({ points }) {
   return (
-    <section id="why" className="relative scroll-mt-28 pt-28 sm:scroll-mt-32 sm:pt-36">
+    <section id="why" className="relative scroll-mt-28 pt-24 sm:scroll-mt-32 sm:pt-28 lg:pt-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <SectionHeading
@@ -22,18 +22,18 @@ export function WhyWork({ points }) {
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-10 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 xl:grid-cols-4">
           {points.map((point, index) => {
             const Icon = iconMap[point.title];
 
             return (
               <Reveal key={point.title} delay={index * 0.05}>
-                <GlowCard className="h-full p-6 sm:p-7">
+                <GlowCard className="h-full p-5 sm:p-6 lg:p-7">
                   <div className="inline-flex rounded-2xl border border-white/10 bg-white/[0.05] p-3 text-white/82">
                     <Icon size={20} />
                   </div>
-                  <h3 className="mt-6 font-heading text-xl font-semibold text-white">{point.title}</h3>
-                  <p className="mt-4 leading-7 text-white/62">{point.text}</p>
+                  <h3 className="mt-5 font-heading text-lg font-semibold text-white sm:mt-6 sm:text-xl">{point.title}</h3>
+                  <p className="mt-3 text-[0.98rem] leading-7 text-white/62 sm:mt-4">{point.text}</p>
                 </GlowCard>
               </Reveal>
             );

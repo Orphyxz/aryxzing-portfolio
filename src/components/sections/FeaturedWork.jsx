@@ -5,7 +5,7 @@ import { SectionHeading } from "../ui/SectionHeading";
 
 export function FeaturedWork({ projects, onProjectOpen }) {
   return (
-    <section id="work" className="relative scroll-mt-28 pt-28 sm:scroll-mt-32 sm:pt-36">
+    <section id="work" className="relative scroll-mt-28 pt-24 sm:scroll-mt-32 sm:pt-28 lg:pt-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <SectionHeading
@@ -15,7 +15,7 @@ export function FeaturedWork({ projects, onProjectOpen }) {
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-2 lg:gap-6">
+        <div className="mt-10 grid gap-5 lg:mt-12 lg:grid-cols-2 lg:gap-6">
           {projects.map((project, index) => (
             <Reveal key={project.id} delay={index * 0.06}>
               <GlowCard className="h-full shadow-[0_22px_60px_rgba(3,6,18,0.34)]">
@@ -24,14 +24,14 @@ export function FeaturedWork({ projects, onProjectOpen }) {
                   onClick={() => onProjectOpen(project)}
                   className="group relative flex h-full w-full flex-col overflow-hidden rounded-[28px] text-left transition-transform duration-300"
                 >
-                  <div className={`relative overflow-hidden border-b border-white/10 bg-gradient-to-br ${project.accent}`}>
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_28%)]" />
-                    <div className="relative p-4 sm:p-6 lg:p-7">
+                    <div className={`relative overflow-hidden border-b border-white/10 bg-gradient-to-br ${project.accent}`}>
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_28%)]" />
+                    <div className="relative p-4 sm:p-5 lg:p-7">
                       <div className="flex flex-wrap items-center justify-between gap-3 text-[10px] uppercase tracking-[0.2em] text-white/58 sm:text-[11px] sm:tracking-[0.34em]">
                         <span>{project.category}</span>
                         <span>{project.year}</span>
                       </div>
-                      <div className="mt-5 rounded-[22px] border border-white/10 bg-[#081122]/82 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:mt-8 sm:rounded-[24px] sm:p-4">
+                      <div className="mt-5 rounded-[22px] border border-white/10 bg-[#081122]/82 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:mt-6 sm:rounded-[24px] sm:p-4">
                         <div className="mb-4 flex items-center gap-2">
                           <span className="h-2.5 w-2.5 rounded-full bg-[#ff6b6b]" />
                           <span className="h-2.5 w-2.5 rounded-full bg-[#f6b975]" />
@@ -42,7 +42,7 @@ export function FeaturedWork({ projects, onProjectOpen }) {
                             <img
                               src={project.thumbnail}
                               alt={project.title}
-                              className="h-44 w-full object-cover object-top transition duration-500 group-hover:scale-[1.03] sm:h-56"
+                              className="aspect-[5/3] w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
                               loading="lazy"
                               decoding="async"
                               width="900"
@@ -68,14 +68,14 @@ export function FeaturedWork({ projects, onProjectOpen }) {
                     </div>
                   </div>
 
-                  <div className="flex flex-1 flex-col p-4 sm:p-6 lg:p-7">
+                  <div className="flex flex-1 flex-col p-4 sm:p-5 lg:p-7">
                     <div className="flex items-start justify-between gap-5">
                       <div>
-                        <h3 className="font-heading text-xl font-semibold text-white sm:text-2xl">{project.title}</h3>
-                        <p className="mt-2 text-sm uppercase tracking-[0.24em] text-white/42">
+                        <h3 className="font-heading text-xl font-semibold text-white sm:text-[1.75rem]">{project.title}</h3>
+                        <p className="mt-2 text-[11px] uppercase tracking-[0.24em] text-white/42 sm:text-sm">
                           {project.category}
                         </p>
-                        <p className="mt-4 max-w-xl text-sm leading-6 text-white/72 sm:text-base sm:leading-7">
+                        <p className="mt-4 max-w-[34rem] text-sm leading-6 text-white/72 sm:text-base sm:leading-7">
                           {project.summary}
                         </p>
                       </div>
@@ -84,7 +84,7 @@ export function FeaturedWork({ projects, onProjectOpen }) {
                       </span>
                     </div>
 
-                    <div className="mt-6 grid gap-4 rounded-[24px] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.035),rgba(255,255,255,0.015))] p-4">
+                    <div className="mt-6 grid gap-4 rounded-[24px] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.035),rgba(255,255,255,0.015))] p-4 sm:p-5">
                       <div>
                         <div className="text-[10px] uppercase tracking-[0.26em] text-white/42">Challenge</div>
                         <p className="mt-2 text-sm leading-6 text-white/76">{project.problem}</p>
@@ -106,7 +106,7 @@ export function FeaturedWork({ projects, onProjectOpen }) {
                       ))}
                     </div>
 
-                    <div className="mt-6 border-t border-white/8 pt-5 sm:mt-8">
+                    <div className="mt-6 border-t border-white/8 pt-5 sm:mt-7">
                       <div className="text-[10px] uppercase tracking-[0.26em] text-white/42">Outcome</div>
                       <div className="mt-2 text-sm leading-6 text-white/84">
                         {project.result}
