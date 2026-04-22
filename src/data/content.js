@@ -1,22 +1,50 @@
 export const navItems = [
-  { label: "Work", href: "#work", id: "work" },
-  { label: "About", href: "#about", id: "about" },
+  { label: "Value", href: "#value", id: "value" },
+  { label: "Projects", href: "#work", id: "work" },
   { label: "Services", href: "#services", id: "services" },
-  { label: "Process", href: "#process", id: "process" },
+  { label: "Why Me", href: "#why", id: "why" },
   { label: "Contact", href: "#contact", id: "contact" },
 ];
 
 export const trustSignals = [
-  "Premium UI",
-  "Full-Stack Ready",
-  "Responsive by Default",
+  "Clean UI",
+  "Fast Performance",
+  "Mobile First",
   "Conversion Focused",
 ];
 
 export const heroStats = [
-  { value: "Static + Full Stack", label: "from sharp service websites to dashboard-style product builds" },
-  { value: "Cloudflare Ready", label: "fast deployment and clean delivery for modern launches" },
-  { value: "MongoDB + AI/ML", label: "backend logic, structured data, and prediction-aware product thinking" },
+  {
+    value: "Startups",
+    label: "launch-ready websites with sharper messaging, stronger trust, and a more premium first impression.",
+  },
+  {
+    value: "Small Businesses",
+    label: "service websites built to explain value fast and move more visitors toward real inquiries.",
+  },
+  {
+    value: "Brands",
+    label: "modern web experiences shaped to look more credible, feel more intentional, and convert better.",
+  },
+];
+
+export const valueProps = [
+  {
+    title: "Who I help",
+    text: "Startups, small businesses, and brands that want a website to look sharper, feel more credible, and do a better job of converting attention into action.",
+  },
+  {
+    title: "What I build",
+    text: "Landing pages, business websites, portfolios, and frontend-heavy web experiences built with modern structure, responsive execution, and strong visual clarity.",
+  },
+  {
+    title: "What makes it different",
+    text: "The work is designed around clarity first, so visitors understand what matters quickly and are guided toward the action you actually want them to take.",
+  },
+  {
+    title: "How I work",
+    text: "Fast communication, sharp execution, and attention to detail so the final result feels premium, business-ready, and far from template-looking.",
+  },
 ];
 
 export const featuredProjects = [
@@ -24,10 +52,16 @@ export const featuredProjects = [
     id: 1,
     title: "Wellness-Connect",
     category: "Student Wellness Platform",
+    problem:
+      "The platform needed to bring booking, assessments, support resources, and admin control into one experience without feeling fragmented or confusing.",
+    improved:
+      "I restructured the experience so students could move through key actions more clearly while admins had a more organized operational view behind the scenes.",
+    result:
+      "Clarified the value proposition within seconds and created a cleaner user journey across booking, support access, and admin management.",
     summary:
-      "A full-stack mental wellness platform designed to help students book therapy slots, take self-assessment tests, and access support resources through one structured system.",
+      "A full-stack wellness platform that combines booking, self-assessment, announcements, and admin oversight in one connected system.",
     tags: ["PHP", "MySQL", "JavaScript"],
-    impact: "Combined booking, assessments, announcements, and admin visibility into one connected support workflow.",
+    impact: "Improved clarity and conversion flow by turning multiple support actions into one guided digital experience.",
     year: "2025",
     accent: "from-[#69d2b0]/22 via-[#5dd2ff]/10 to-transparent",
     thumbnail: "/projects/wellness-connect/home.png",
@@ -46,19 +80,25 @@ export const featuredProjects = [
       "Added self-help article access and slot cancellation logic to make the platform more useful beyond a single booking step.",
     ],
     scope: [
-      { label: "UI Design", value: "Student + admin flows" },
-      { label: "Build", value: "Full-stack web platform" },
-      { label: "Backend", value: "PHP + MySQL system" },
+      { label: "Project Type", value: "Full-stack web platform" },
+      { label: "Challenge", value: "Multi-flow student support system" },
+      { label: "Build", value: "PHP + MySQL implementation" },
     ],
   },
   {
     id: 2,
     title: "Aptisense",
     category: "Placement Analytics Platform",
+    problem:
+      "The product needed to make mock tests, performance insight, and placement-readiness data feel useful instead of overwhelming for both students and admins.",
+    improved:
+      "I restructured the dashboards, test discovery, and analytics flow so users could understand performance faster and act on it with less friction.",
+    result:
+      "Restructured the experience to create a cleaner user journey and make readiness, weak areas, and testing activity easier to read quickly.",
     summary:
-      "A full-stack aptitude testing and placement-readiness platform built for students and admins, combining mock tests, analytics dashboards, and ML-assisted success prediction.",
+      "A full-stack placement-readiness platform with mock tests, analytics dashboards, and ML-assisted prediction workflows.",
     tags: ["React", "Node.js", "Python ML"],
-    impact: "Connected assessments, performance analytics, and prediction signals into one platform for clearer readiness tracking.",
+    impact: "Created a stronger dashboard-first product experience with clearer performance insight and more useful decision-making screens.",
     year: "2025",
     accent: "from-[#5dd2ff]/25 via-[#5dd2ff]/10 to-transparent",
     thumbnail: "/projects/aptisense/student-dashboard.png",
@@ -76,19 +116,25 @@ export const featuredProjects = [
       "Integrated a Python FastAPI ML service to estimate success probability, with a backend fallback model to keep predictions available even if the ML service is unavailable.",
     ],
     scope: [
-      { label: "UI Design", value: "Dashboards + test flows" },
-      { label: "Build", value: "Full-stack web app" },
-      { label: "Systems", value: "Node, MongoDB, ML service" },
+      { label: "Project Type", value: "Analytics-focused web app" },
+      { label: "Challenge", value: "Student + admin dashboard clarity" },
+      { label: "Build", value: "React, Node, MongoDB, ML service" },
     ],
   },
   {
     id: 3,
     title: "Get It All Sorted",
-    category: "Home Organization Service",
+    category: "Service Business Website",
+    problem:
+      "The service needed a stronger online presence that felt trustworthy fast and made it easier for visitors to understand the offer and reach out.",
+    improved:
+      "I built a sharper brand-first landing page with clearer service framing, stronger visual proof, and a simpler path toward inquiry.",
+    result:
+      "Guided users toward action with a stronger conversion flow built around trust, visual proof, and consultation intent.",
     summary:
-      "A clean multi-page service website for a professional home organizer, built to create trust quickly and turn visitors into consultation inquiries.",
+      "A clean service website built to help a home organization business communicate value quickly and convert visitors into consultations.",
     tags: ["HTML", "CSS", "JavaScript"],
-    impact: "Used before-and-after visuals, service-focused copy, and simple navigation to support consultation-driven conversions.",
+    impact: "Improved brand clarity and lead-focused structure with a simpler, more credible user journey.",
     year: "2024",
     accent: "from-[#d9a676]/22 via-[#f5d08b]/10 to-transparent",
     thumbnail: "/projects/getitallsorted/hero.png",
@@ -106,19 +152,25 @@ export const featuredProjects = [
       "Kept the frontend lightweight and easy to navigate with focused CTAs that lead users toward a free consultation.",
     ],
     scope: [
-      { label: "UI Design", value: "Service website layout" },
-      { label: "Build", value: "Multi-page business website" },
-      { label: "Frontend", value: "HTML, CSS, JavaScript" },
+      { label: "Project Type", value: "Business marketing website" },
+      { label: "Challenge", value: "Trust-building service presentation" },
+      { label: "Build", value: "Multi-page frontend website" },
     ],
   },
   {
     id: 4,
     title: "E-Placement Hub",
     category: "Placement Management System",
+    problem:
+      "The system had to bring student management, drive updates, notices, and placement outcomes into a flow that felt more organized and easier to operate.",
+    improved:
+      "I structured the product around role-based clarity, stronger operational visibility, and workflows that made recruitment progress easier to manage.",
+    result:
+      "Built a more usable admin-first platform with clearer workflow logic, stronger dashboard visibility, and a cleaner operational journey.",
     summary:
-      "A full-stack campus placement platform built to help students and administrators manage recruitment drives, student progress, offer letters, and placement outcomes in one system.",
+      "A full-stack placement platform for managing drives, student progress, notices, offer letters, and placement outcomes in one system.",
     tags: ["React", "Node.js", "MongoDB"],
-    impact: "Brought student management, drive tracking, selection reporting, and offer-letter workflows into one structured placement dashboard.",
+    impact: "Redesigned the experience for a cleaner user journey across dashboards, workflows, and day-to-day placement operations.",
     year: "2025",
     accent: "from-[#38c9b8]/22 via-[#5dd2ff]/10 to-transparent",
     thumbnail: "/projects/e-placement-hub/admin-dashboard.jpg",
@@ -140,71 +192,48 @@ export const featuredProjects = [
       "Connected MongoDB-backed dashboards, offer-letter uploads, and a prediction endpoint that can call an ML microservice to estimate placement probability for students in a drive.",
     ],
     scope: [
-      { label: "UI Design", value: "Admin + student portal UX" },
-      { label: "Build", value: "Full-stack placement system" },
-      { label: "Backend", value: "React, Express, MongoDB" },
+      { label: "Project Type", value: "Full-stack management system" },
+      { label: "Challenge", value: "Role-based recruitment workflow design" },
+      { label: "Build", value: "React, Express, MongoDB" },
     ],
-  },
-];
-
-export const strengths = [
-  {
-    title: "UI/UX Design",
-    text: "Clean hierarchy, strong layout rhythm, and polished visual decisions that make the work feel intentional from the first screen.",
-  },
-  {
-    title: "Frontend Development",
-    text: "Responsive interfaces with thoughtful motion, refined interactions, and execution that feels production-ready instead of improvised.",
-  },
-  {
-    title: "Responsive Design",
-    text: "Layouts that stay sharp across desktop, tablet, and mobile so the design still feels premium on smaller screens.",
-  },
-  {
-    title: "Conversion Thinking",
-    text: "Every screen is shaped to build trust quickly, communicate value clearly, and move visitors toward action without clutter.",
   },
 ];
 
 export const services = [
   {
-    title: "Static Websites",
-    description:
-      "High-trust marketing websites for businesses, creators, and personal brands that need a polished online presence without unnecessary complexity.",
+    title: "Landing Pages",
+    description: "High-converting pages built to communicate value quickly and drive more inquiries, signups, or calls.",
   },
   {
-    title: "Full-Stack Websites",
-    description:
-      "Custom builds with frontend, backend, and database logic for dashboards, portals, booking flows, and system-driven web products.",
+    title: "Business Websites",
+    description: "Modern websites for service businesses and brands that need to look more credible and convert better.",
   },
   {
-    title: "Cloudflare Deployment",
-    description:
-      "Deployment support for fast, reliable launches with modern hosting, clean handoff, and performance kept in mind from the start.",
+    title: "Portfolio Websites",
+    description: "Clean, premium portfolio sites for creatives, freelancers, and personal brands who need a stronger online presence.",
   },
   {
-    title: "Website Redesigns",
-    description:
-      "Strategic redesigns that replace weak visuals and clunky UX with something sharper, faster, and far more credible.",
+    title: "Frontend Development",
+    description: "Polished UI implementation for custom designs, product pages, dashboards, and responsive component-heavy builds.",
   },
 ];
 
-export const processSteps = [
+export const trustPoints = [
   {
-    title: "Understand the Need",
-    text: "I start by understanding what the client actually needs, what the website should achieve, and what kind of impression it should leave.",
+    title: "No template-looking design",
+    text: "The work is designed to feel sharper, more intentional, and more premium than the average off-the-shelf site.",
   },
   {
-    title: "Build the Product",
-    text: "Once the direction is clear, I design and build with clean UI, strong responsiveness, and the right level of functionality for the project.",
+    title: "Clarity-first design thinking",
+    text: "Every layout is shaped to help people understand what you do fast and move toward the next action with less hesitation.",
   },
   {
-    title: "Share Working Samples",
-    text: "You see progress early through working previews, so feedback happens while the product is taking shape instead of after everything is locked.",
+    title: "Fast, responsive builds",
+    text: "The sites are built to feel smooth, polished, and strong across desktop, tablet, and mobile from the start.",
   },
   {
-    title: "Refine and Launch",
-    text: "Revisions are handled carefully, then the final site is refined, tested, and prepared for a confident launch.",
+    title: "Results over empty visuals",
+    text: "The goal is not just a nicer interface. It is a website that builds trust faster and does a better job of converting visitors.",
   },
 ];
 

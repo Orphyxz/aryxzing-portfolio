@@ -1,24 +1,24 @@
-import { Code2, Palette, Rocket, Smartphone } from "lucide-react";
+import { BriefcaseBusiness, LayoutPanelTop, Sparkles, Target } from "lucide-react";
 import { GlowCard } from "../ui/GlowCard";
 import { Reveal } from "../ui/Reveal";
 import { SectionHeading } from "../ui/SectionHeading";
 
 const iconMap = {
-  "UI/UX Design": Palette,
-  "Frontend Development": Code2,
-  "Responsive Design": Smartphone,
-  "Conversion Thinking": Rocket,
+  "Who I help": BriefcaseBusiness,
+  "What I build": LayoutPanelTop,
+  "What makes it different": Target,
+  "How I work": Sparkles,
 };
 
 export function About({ strengths }) {
   return (
-    <section id="about" className="relative scroll-mt-28 pt-28 sm:scroll-mt-32 sm:pt-36">
+    <section id="value" className="relative scroll-mt-28 pt-28 sm:scroll-mt-32 sm:pt-36">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.9fr,1.1fr] lg:px-8">
         <Reveal>
           <SectionHeading
-            eyebrow="About"
-            title="A designer-developer profile shaped by real builds, not just polished mockups."
-            description="I&apos;m Aryxzing, a web designer and full-stack developer focused on building websites and web platforms that feel sharp, modern, and credible. My work now spans premium marketing sites, admin dashboards, student-facing systems, MongoDB-backed applications, and AI/ML-aware product thinking when the project calls for smarter functionality."
+            eyebrow="Value"
+            title="If the website feels average, people assume the business is too."
+            description="I help startups and businesses replace weak, generic web presence with something sharper, clearer, and easier to trust. The point is not just better visuals. It is a better first impression, better structure, and a stronger reason to take action."
           />
         </Reveal>
 

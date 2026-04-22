@@ -5,23 +5,23 @@ import {
   featuredProjects,
   heroStats,
   navItems,
-  processSteps,
   services,
   socialLinks,
-  strengths,
+  trustPoints,
   trustSignals,
+  valueProps,
 } from "./data/content";
 import { About } from "./components/sections/About";
 import { Contact } from "./components/sections/Contact";
 import { FeaturedWork } from "./components/sections/FeaturedWork";
 import { Hero } from "./components/sections/Hero";
-import { Process } from "./components/sections/Process";
 import { Services } from "./components/sections/Services";
+import { WhyWork } from "./components/sections/WhyWork";
 import { BackgroundFX } from "./components/ui/BackgroundFX";
 import { ProjectModal } from "./components/ui/ProjectModal";
 
 function App() {
-  const [activeSection, setActiveSection] = useState("work");
+  const [activeSection, setActiveSection] = useState("value");
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -92,7 +92,7 @@ function App() {
     const timer = window.setTimeout(() => {
       window.sessionStorage.setItem("aryxzing-loader-seen", "1");
       setIsLoaded(true);
-    }, 650);
+    }, 420);
 
     return () => window.clearTimeout(timer);
   }, []);
@@ -126,7 +126,7 @@ function App() {
                 ARYXZING
               </div>
               <div className="mt-3 text-[10px] uppercase tracking-[0.35em] text-white/42 sm:text-xs sm:tracking-[0.45em]">
-                Premium websites and full-stack builds
+                Modern websites built to convert
               </div>
               <div className="mx-auto mt-8 h-px w-40 overflow-hidden bg-white/10 sm:w-52">
                 <motion.div
@@ -152,7 +152,7 @@ function App() {
                 <div className="truncate font-heading text-[11px] font-semibold uppercase tracking-[0.22em] text-white sm:text-sm sm:tracking-[0.28em]">
                   Aryxzing
                 </div>
-                <div className="hidden text-xs text-white/42 lg:block">Freelance designer, developer, and web product builder</div>
+                <div className="hidden text-xs text-white/42 lg:block">Freelance website designer and frontend developer</div>
               </div>
             </a>
 
@@ -221,7 +221,7 @@ function App() {
                 className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-glow-amber/25 bg-[linear-gradient(135deg,rgba(246,185,117,0.2),rgba(255,255,255,0.08))] px-5 py-3 text-sm font-semibold text-white"
                 onClick={() => setMenuOpen(false)}
               >
-                Let&apos;s Talk
+                Work With Me
               </a>
             </motion.div>
           </motion.div>
@@ -237,10 +237,10 @@ function App() {
             featuredProjects.find((project) => project.title === "E-Placement Hub"),
           ].filter(Boolean)}
         />
+        <About strengths={valueProps} />
         <FeaturedWork projects={featuredProjects} onProjectOpen={setSelectedProject} />
-        <About strengths={strengths} />
         <Services services={services} />
-        <Process steps={processSteps} />
+        <WhyWork points={trustPoints} />
         <Contact socialLinks={socialLinks} />
       </main>
 

@@ -9,25 +9,25 @@ export function FeaturedWork({ projects, onProjectOpen }) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <SectionHeading
-            eyebrow="Featured Work"
-            title="Real projects across websites, dashboards, and full-stack product workflows."
-            description="This work now goes beyond static visuals. It includes service websites, admin systems, student platforms, analytics dashboards, and interface decisions built to create trust fast."
+            eyebrow="Selected Projects"
+            title="Selected work that shows how I think about clarity, positioning, and stronger conversion flow."
+            description="These projects are presented like short case studies so the thinking is visible, not just the final screen design."
           />
         </Reveal>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+        <div className="mt-12 grid gap-5 lg:grid-cols-2 lg:gap-6">
           {projects.map((project, index) => (
             <Reveal key={project.id} delay={index * 0.06}>
-              <GlowCard className="h-full">
+              <GlowCard className="h-full shadow-[0_22px_60px_rgba(3,6,18,0.34)]">
                 <button
                   type="button"
                   onClick={() => onProjectOpen(project)}
-                  className="group relative flex h-full w-full flex-col overflow-hidden rounded-[28px] text-left"
+                  className="group relative flex h-full w-full flex-col overflow-hidden rounded-[28px] text-left transition-transform duration-300"
                 >
                   <div className={`relative overflow-hidden border-b border-white/10 bg-gradient-to-br ${project.accent}`}>
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_28%)]" />
-                    <div className="relative p-4 sm:p-7">
-                      <div className="flex flex-wrap items-center justify-between gap-3 text-[10px] uppercase tracking-[0.18em] text-white/50 sm:text-[11px] sm:tracking-[0.34em]">
+                    <div className="relative p-4 sm:p-6 lg:p-7">
+                      <div className="flex flex-wrap items-center justify-between gap-3 text-[10px] uppercase tracking-[0.2em] text-white/58 sm:text-[11px] sm:tracking-[0.34em]">
                         <span>{project.category}</span>
                         <span>{project.year}</span>
                       </div>
@@ -65,32 +65,49 @@ export function FeaturedWork({ projects, onProjectOpen }) {
                     </div>
                   </div>
 
-                  <div className="flex flex-1 flex-col p-4 sm:p-7">
+                  <div className="flex flex-1 flex-col p-4 sm:p-6 lg:p-7">
                     <div className="flex items-start justify-between gap-5">
                       <div>
                         <h3 className="font-heading text-xl font-semibold text-white sm:text-2xl">{project.title}</h3>
-                        <p className="mt-4 max-w-xl text-sm leading-6 text-white/64 sm:text-base sm:leading-7">
+                        <p className="mt-2 text-sm uppercase tracking-[0.24em] text-white/42">
+                          {project.category}
+                        </p>
+                        <p className="mt-4 max-w-xl text-sm leading-6 text-white/72 sm:text-base sm:leading-7">
                           {project.summary}
                         </p>
                       </div>
-                      <span className="hidden rounded-full border border-white/10 bg-white/[0.04] p-3 text-white/70 transition duration-300 group-hover:border-glow-amber/30 group-hover:text-glow-amber sm:inline-flex">
+                      <span className="hidden rounded-full border border-white/10 bg-white/[0.04] p-3 text-white/70 transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:border-glow-amber/30 group-hover:text-glow-amber sm:inline-flex">
                         <ArrowUpRight size={18} />
                       </span>
                     </div>
 
-                    <div className="mt-8 flex flex-wrap gap-2">
+                    <div className="mt-6 grid gap-4 rounded-[24px] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.035),rgba(255,255,255,0.015))] p-4">
+                      <div>
+                        <div className="text-[10px] uppercase tracking-[0.26em] text-white/42">Challenge</div>
+                        <p className="mt-2 text-sm leading-6 text-white/76">{project.problem}</p>
+                      </div>
+                      <div>
+                        <div className="text-[10px] uppercase tracking-[0.26em] text-white/42">What I Improved</div>
+                        <p className="mt-2 text-sm leading-6 text-white/76">{project.improved}</p>
+                      </div>
+                    </div>
+
+                    <div className="mt-6 flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/62"
+                          className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/66 transition duration-300 hover:border-white/18 hover:bg-white/[0.07]"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    <div className="mt-6 border-t border-white/8 pt-5 text-sm leading-6 text-white/58 sm:mt-8">
-                      {project.impact}
+                    <div className="mt-6 border-t border-white/8 pt-5 sm:mt-8">
+                      <div className="text-[10px] uppercase tracking-[0.26em] text-white/42">Outcome</div>
+                      <div className="mt-2 text-sm leading-6 text-white/84">
+                        {project.result}
+                      </div>
                     </div>
                   </div>
                 </button>

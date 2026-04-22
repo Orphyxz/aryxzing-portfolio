@@ -1,13 +1,13 @@
-import { LayoutTemplate, RefreshCcw, Send, ShieldCheck } from "lucide-react";
+import { BriefcaseBusiness, LayoutTemplate, MonitorSmartphone, PanelsTopLeft } from "lucide-react";
 import { GlowCard } from "../ui/GlowCard";
 import { Reveal } from "../ui/Reveal";
 import { SectionHeading } from "../ui/SectionHeading";
 
 const iconMap = {
-  "Static Websites": LayoutTemplate,
-  "Full-Stack Websites": Send,
-  "Cloudflare Deployment": ShieldCheck,
-  "Website Redesigns": RefreshCcw,
+  "Landing Pages": PanelsTopLeft,
+  "Business Websites": BriefcaseBusiness,
+  "Portfolio Websites": LayoutTemplate,
+  "Frontend Development": MonitorSmartphone,
 };
 
 export function Services({ services }) {
@@ -16,9 +16,9 @@ export function Services({ services }) {
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <Reveal>
           <SectionHeading
-            eyebrow="Services"
-            title="Built for clients who want sharp design backed by real technical ability."
-            description="Whether the project needs a high-trust website, a more capable full-stack build, or a cleaner redesign, the work stays custom, responsive, and deliberately polished."
+            eyebrow="What I Can Help With"
+            title="The kind of web work businesses usually need, done with more polish and better execution."
+            description="Whether you need a sharper landing page, a stronger business website, or frontend implementation that actually feels premium, the work stays focused, responsive, and built around outcomes."
           />
         </Reveal>
 

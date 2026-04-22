@@ -79,13 +79,13 @@ export function ProjectModal({ project, onClose }) {
                     {project.title}
                   </h3>
                   <p className="mt-4 max-w-2xl text-sm leading-6 text-white/72 sm:text-lg sm:leading-7">
-                    {project.summary}
+                    {project.problem}
                   </p>
                 </div>
 
                 <div className="rounded-[28px] border border-white/10 bg-[#07101f]/65 p-5 backdrop-blur-xl">
-                  <div className="mb-3 text-xs uppercase tracking-[0.28em] text-white/45">Project Focus</div>
-                  <p className="text-lg font-medium text-white/88">{project.image}</p>
+                  <div className="mb-3 text-xs uppercase tracking-[0.28em] text-white/45">What I Improved</div>
+                  <p className="text-lg font-medium text-white/88">{project.improved}</p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
@@ -152,7 +152,7 @@ export function ProjectModal({ project, onClose }) {
 
               <div className="rounded-[28px] border border-white/10 bg-white/[0.03] p-6">
                 <div className="text-xs uppercase tracking-[0.3em] text-white/45">Outcome</div>
-                <p className="mt-4 text-xl font-semibold leading-8 text-white">{project.impact}</p>
+                <p className="mt-4 text-xl font-semibold leading-8 text-white">{project.result}</p>
                 <div className="mt-8 text-sm uppercase tracking-[0.28em] text-white/45">Scope</div>
                 <div className="mt-4 space-y-3 text-white/68">
                   {scopeItems.map((item) => (

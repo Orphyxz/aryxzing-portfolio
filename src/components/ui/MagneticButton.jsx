@@ -25,12 +25,12 @@ export function MagneticButton({
   }, []);
 
   const base =
-    "inline-flex items-center justify-center rounded-full border px-6 py-3 text-sm font-semibold tracking-wide transition-colors duration-300";
+    "inline-flex items-center justify-center rounded-full border px-6 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300";
   const variants = {
     primary:
-      "border-glow-amber/30 bg-[linear-gradient(135deg,rgba(246,185,117,0.22),rgba(255,255,255,0.08))] text-white shadow-[0_15px_35px_rgba(246,185,117,0.15)] hover:border-glow-amber/50",
+      "border-glow-amber/40 bg-[linear-gradient(135deg,rgba(246,185,117,0.34),rgba(255,255,255,0.1))] text-white shadow-[0_18px_42px_rgba(246,185,117,0.18)] hover:border-glow-amber/70 hover:shadow-[0_22px_55px_rgba(246,185,117,0.24)]",
     secondary:
-      "border-white/12 bg-white/[0.04] text-white/85 hover:border-white/20 hover:bg-white/[0.08]",
+      "border-white/12 bg-white/[0.04] text-white/88 hover:border-white/20 hover:bg-white/[0.08]",
   };
 
   const handleMove = (event) => {

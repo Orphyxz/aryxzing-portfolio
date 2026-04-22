@@ -28,7 +28,7 @@ export function GlowCard({ children, className = "", hoverScale = 1.015 }) {
 
   return (
     <motion.div
-      className={`group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] backdrop-blur-xl ${className}`}
+      className={`group relative overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.025))] backdrop-blur-xl ${className}`}
       onMouseMove={interactive ? handleMove : undefined}
       whileHover={interactive ? { scale: hoverScale, y: -4 } : undefined}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
