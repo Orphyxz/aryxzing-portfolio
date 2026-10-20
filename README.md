@@ -56,5 +56,5 @@ src/
 
 ## Notes
 
-- All portfolio content is sample content and can be edited in `src/data/content.js`.
+- All site content (projects, services, contact links) lives in `src/data/content.js`.
 - The project is designed as a polished single-page experience with responsive layouts, animated reveals, a project modal, and premium background effects.

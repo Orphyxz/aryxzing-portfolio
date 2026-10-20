@@ -239,6 +239,7 @@ export const trustPoints = [
 
 export const socialLinks = [
   { label: "Email", href: "mailto:aryxzing@gmail.com" },
+  { label: "GitHub", href: "https://github.com/Orphyxz" },
   { label: "Reddit", href: "https://www.reddit.com/user/Orphis_/" },
   { label: "Telegram", href: "https://t.me/Orphyxz" },
 ];
